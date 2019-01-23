@@ -1,0 +1,20 @@
+extends layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/main.css")
+block content
+    if prods.length > 0
+        .grid
+            each product in prods
+                article.card.product-item
+                    .card__image
+                        img(src="https://static1.squarespace.com/static/5588c61de4b062bc4c6b34c5/5af087fe6d2a73731f81f420/5af087ff758d46b85c0d88a4/1525713223150/The+Birds+In+Situ.png", alt="Book 1")
+                    header.card__header
+                        h1.product__title #{product.title}
+                    .card__content
+                        p.product__description A very interesting book about so many even more interesting things
+                        h2.product__price $19.99
+                    .card__actions
+                        button.btn Add to Cart
+    else 
+        h1.center No Products

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+  
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  max-width: 90%;
+  padding: 1rem;
+  margin: auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+
+.main-header {
+    width: 100%;
+    height: 3.5rem;
+    background-color: #dbdbdb;
+    display: flex;
+    position: relative;
+}
+
+.logo-img img{
+    max-width: 3rem;
+    margin:  4px 2rem;
+}
+
+.main-header__nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 2rem;
+}
+
+.main-header__item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-header__item {
+    margin: 0 1rem;
+    padding: 0;
+}
+
+.main-header__item a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-header__item a:hover,
+.main-header__item a:active,
+.main-header__item a.active {
+    color: #fff;
+}
+.card {
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.card__header {
+padding: 0;
+}
+.card__content {
+padding: 1rem;
+display: flex;
+}
+
+.card__header h1,
+.card__content h1,
+.card__content h2,
+.card__content p {
+margin: 0;
+}
+
+.card__image {
+width: 100%;
+}
+
+.card__image img {
+width: 100%;
+}
+
+.card__actions {
+    /* padding: 1rem; */
+    text-align: center;
+}
+
+/* .card__actions button,
+.card__actions a {
+    margin: 0 0.25rem;
+} */
+
+.product-form {
+width: 20rem;
+max-width: 90%;
+margin: auto;
+}
+.product-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem 0;
+}
+
+.product__title {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.product__price {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+}
+
+.product__description {
+    text-align: left;
+}
+
+.form-control {
+margin: 1rem 0;
+}
+
+.form-control label,
+.form-control input {
+display: block;
+width: 100%;
+}
+
+.form-control input {
+border: 1px solid #cecece;
+font: inherit;
+border-radius: 2px;
+}
+
+.form-control input:focus {
+    outline-color: #00695c;
+}
+
+button {
+    font: inherit;
+    border: 0;
+    border-top: 1px solid #dbdbdb;
+    color: #000;
+    background: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    padding: 1rem;
+}
+
+button:hover,
+button:active {
+background-color: #000;
+color: #f7f7f7;
+}
+
+.btn-add-product {
+    border: 1px solid #dbdbdb;
+    background: #000;
+    color: #fff;
+}
+.btn-add-product:hover,
+.btn-add-product:active {
+    color: #000;
+    background: #f7f7f7;
+}
