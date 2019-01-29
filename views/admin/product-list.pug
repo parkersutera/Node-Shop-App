@@ -1,0 +1,22 @@
+extends ../layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/main.css")
+block content
+    if prods.length > 0
+        .grid
+            each product in prods
+                article.card.product-item
+                    .card__image
+                        img(src=`${product.imageUrl}`,alt=`${product.title}`) 
+                    header.card__header
+                        h1.product__title #{product.title}
+                    .card__content
+                        p.product__description #{product.description}
+                        h2.product__price $#{product.price}
+                    .card__actions__admin
+                        button(onclick="window.location.href = '/admin/edit-products';").btn.edit Edit
+                        form(action="/admin/delete-product" method="POST").full-width
+                            button(type="submit").btn Delete
+    else 
+        h1.center No Products

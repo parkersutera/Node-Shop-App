@@ -4,14 +4,20 @@ const express = require('express');
 
 // const rootDir = require('../helpers/path.js');
 
-const productsController = require('../controllers/products');
+const adminController = require('../controllers/admin');
 
 const router = express.Router();
+
+// /admin/add-product => GET
+router.get('/add-product', adminController.getAddProductPage);
+router.get('/product-list', adminController.getProductList);
+
+// /admin/add-product => POST
+router.post('/add-product', adminController.postAddProductPage);
 
 // Everything commented out is the functional way of routing with no MVC
 // const products = [];
 
-router.get('/add-product', productsController.getAddProductPage);
 // You can leave this route get function as is but in the interest of MVC im linking the function in the controllers folder
 // router.get('/add-product', (req,res,next) => {
 //     res.render('add-product', {
@@ -21,7 +27,6 @@ router.get('/add-product', productsController.getAddProductPage);
 //     });
 // });
 
-router.post('/add-product', productsController.postAddProductPage);
 // You can leave this route get function as is but in the interest of MVC im linking the function in the controllers folder
 // router.post('/add-product', (req,res,next) => {
 //     // console.log(req.body);
