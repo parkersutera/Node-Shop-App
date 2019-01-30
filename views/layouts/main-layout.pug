@@ -7,9 +7,11 @@ html(lang="en")
         title #{pageTitle}
         block styles
     body
+        .backdrop
         header.main-header
             .logo-img
                 img(src="http://miportfol.io/assets/img/logo-dice.png")
+            button#side-menu-toggle Menu
             nav.main-header__nav
                 ul.main-header__item-list
                     li.main-header__item
@@ -24,5 +26,20 @@ html(lang="en")
                         a(href="/cart", class=(path==="/cart" ? 'active' : '')) Cart
                     li.main-header__item
                         a(href="/orders", class=(path==="/orders" ? 'active' : '')) Orders
+        nav.mobile-nav
+            ul.mobile-nav__item-list
+                li.mobile-nav__item
+                    a(href="/admin/product-list", class=(path==="/admin/product-list" ? 'active' : '')) Admin Products
+                li.mobile-nav__item
+                    a(href="/", class=(path==='/' ? 'active' : '')) Shop
+                li.mobile-nav__item
+                    a(href="/admin/add-product", class=(path==="/admin/add-product" ? 'active' : '')) Add Product
+                li.mobile-nav__item
+                    a(href="/products", class=(path==="/products" ? 'active' : '')) Products
+                li.mobile-nav__item
+                    a(href="/cart", class=(path==="/cart" ? 'active' : '')) Cart
+                li.mobile-nav__item
+                    a(href="/orders", class=(path==="/orders" ? 'active' : '')) Orders
         main 
             block content
+            <script src="/js/main.js"></script>
