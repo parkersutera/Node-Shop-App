@@ -15,6 +15,8 @@ block content
                         p.product__description #{product.description}
                         h2.product__price $#{product.price}
                     .card__actions
+                        //- this should use the products unique ID to take you to the single product page
+                        a(href=`/products/${product.id}`).btn.a-fix Details 
                         form(action="/add-to-cart" method="POST")
                             button.btn Add to Cart
     else 

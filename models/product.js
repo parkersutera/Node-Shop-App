@@ -30,6 +30,7 @@ module.exports = class Product {
     }
     // save product created to array
     save() {
+        this.id = Math.random().toString(); // this creates an ID unique to the product that was just created
         getProductsFromFile( products => {
             products.push(this); //to ensure 'this' refers to the class use an => function while reading file
             fs.writeFile(p, JSON.stringify(products), (err) => {
@@ -40,5 +41,12 @@ module.exports = class Product {
     // get all products in this array
     static fetchAll(cb) {
         getProductsFromFile(cb);
+    }
+
+    static findById(id, cb) {
+        getProductsFromFile(products => {
+            const product = products.find(p => p.id === id);
+            cb(product);
+        });
     }
 };

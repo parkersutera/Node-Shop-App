@@ -170,7 +170,12 @@ border-radius: 2px;
     outline-color: #00695c;
 }
 
-button {
+.a-fix {
+    display: block;
+    text-decoration: none;
+}
+
+button, .btn {
     font: inherit;
     border: 0;
     border-top: 1px solid #dbdbdb;
@@ -183,7 +188,9 @@ button {
 }
 
 button:hover,
-button:active {
+button:active,
+.btn:hover,
+.btn:active {
 background-color: #000;
 color: #f7f7f7;
 }
