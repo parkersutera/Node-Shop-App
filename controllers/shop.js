@@ -1,6 +1,5 @@
-// no longer needed thanks to product.js model
-// const products = [];
 const Product = require('../models/product');
+const Cart =require('../models/cart');
 
 // gets all the products that exist
 exports.getProducts = (req,res,next) => {
@@ -17,9 +16,12 @@ exports.getProducts = (req,res,next) => {
 exports.getProduct = (req, res, next) => {
     const prodId = req.params.productId;
     Product.findById(prodId, product => {
-        console.log(product);
+        res.render('shop/product-detail', {
+            product: product, 
+            pageTitle: product.title,
+            path: '/products'
+        });
     });
-    res.redirect('/');
 };
 
 // again gets all products for the index page tho
@@ -47,6 +49,14 @@ exports.getCart = (req,res,next) => {
         path: '/cart',
         pageTitle: 'Cart'
     });
+};
+
+exports.postCart = (req, res, next) => {
+    const prodId = req.body.productId;
+    Product.findById(prodId, (product) => {
+        Cart.addProduct(prodId, product.price);
+    });
+    res.redirect('/cart');
 };
 
 // gets the checkout page

@@ -1,0 +1,16 @@
+extends ../layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/main.css")
+
+block content
+    .center
+        img(src=`${product.imageUrl}` alt=`${product.title}`)
+        .details-div
+            h1 #{product.title}
+            hr
+            h2 #{product.price}
+            p #{product.description}
+            form(action="/cart" method="post")
+                button(type="submit").btn.blk-btn Add to Cart
+                input(type="hidden" name="productId" value=`${product.id}`)

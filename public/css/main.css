@@ -195,18 +195,30 @@ background-color: #000;
 color: #f7f7f7;
 }
 
-.btn-add-product {
-    border: 1px solid #dbdbdb;
-    background: #000;
-    color: #fff;
-}
 .btn-add-product:hover,
 .btn-add-product:active {
     color: #000;
     background: #f7f7f7;
 }
 
+.blk-btn {
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+}
+.blk-btn:hover,
+.blk-btn:focus,
+.blk-btn:active {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
 
+.details-div {
+    display: block;
+}
+
+/* MOBILE VIEWS */
 .mobile-nav {
     width: 30rem;
     height: 100vh;

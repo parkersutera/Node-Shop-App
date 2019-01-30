@@ -8,7 +8,8 @@ block content
             each product in prods
                 article.card.product-item
                     .card__image
-                        img(src=`${product.imageUrl}`,alt=`${product.title}`) 
+                        a(href=`/products/${product.id}`)
+                            img(src=`${product.imageUrl}`,alt=`${product.title}`) 
                     header.card__header
                         h1.product__title #{product.title}
                     .card__content
@@ -17,7 +18,8 @@ block content
                     .card__actions
                         //- this should use the products unique ID to take you to the single product page
                         a(href=`/products/${product.id}`).btn.a-fix Details 
-                        form(action="/add-to-cart" method="POST")
-                            button.btn Add to Cart
+                        form(action="/cart" method="post")
+                            button(type="submit").btn Add to Cart
+                            input(type="hidden" name="productId" value=`${product.id}`)
     else 
         h1.center No Products
