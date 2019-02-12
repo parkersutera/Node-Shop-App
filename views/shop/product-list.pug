@@ -14,7 +14,8 @@ block content
                         h1.product__title #{product.title}
                     .card__content
                         p.product__description #{product.description}
-                        h2.product__price $#{product.price}
+                        .product__price-container
+                            h2.product__price $#{product.price}
                     .card__actions
                         //- this should use the products unique ID to take you to the single product page
                         a(href=`/products/${product.id}`).btn.a-fix.btn-no-radius Details 

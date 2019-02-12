@@ -22,7 +22,8 @@ const getProductsFromFile = cb => {
 }
 
 module.exports = class Product {
-    constructor(title, imageUrl, description, price) {
+    constructor(id, title, imageUrl, description, price) {
+        this.id = id;
         this.title = title;
         this.imageUrl = imageUrl;
         this.description = description;
@@ -30,12 +31,23 @@ module.exports = class Product {
     }
     // save product created to array
     save() {
-        this.id = Math.random().toString(); // this creates an ID unique to the product that was just created
-        getProductsFromFile( products => {
-            products.push(this); //to ensure 'this' refers to the class use an => function while reading file
-            fs.writeFile(p, JSON.stringify(products), (err) => {
-                console.log(err);
-            });
+        getProductsFromFile(products => {
+            // if this product already exists the product attributes are updated
+            if (this.id) {
+                const existingProductIndex = products.findIndex(prod => prod.id === this.id);
+                const updatedProducts = [...products];
+                updatedProducts[existingProductIndex] = this;
+                fs.writeFile(p, JSON.stringify(updatedProducts), (err) => {
+                    console.log(err);
+                });
+            }
+            else {
+                this.id = Math.random().toString(); // this creates an ID unique to the product that was just created
+                products.push(this); //to ensure 'this' refers to the class use an => function while reading file
+                fs.writeFile(p, JSON.stringify(products), (err) => {
+                    console.log(err);
+                });
+            }
         }); 
     }
     // get all products in this array

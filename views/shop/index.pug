@@ -13,7 +13,8 @@ block content
                         h1.product__title #{product.title}
                     .card__content
                         p.product__description #{product.description}
-                        h2.product__price $#{product.price}
+                        .product__price-container
+                            h2.product__price $#{product.price}
                     .card__actions
                         form(action="/cart" method="post")
                             button(type="submit").btn Add to Cart

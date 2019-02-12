@@ -13,9 +13,10 @@ block content
                         h1.product__title #{product.title}
                     .card__content
                         p.product__description #{product.description}
-                        h2.product__price $#{product.price}
+                        .product__price-container
+                            h2.product__price $#{product.price}
                     .card__actions__admin
-                        button(onclick="window.location.href = '/admin/edit-products';").btn.edit Edit
+                        button(onclick=`window.location.href = '/admin/edit-product/${product.id}?edit=true';`).btn.edit Edit
                         form(action="/admin/delete-product" method="POST").full-width
                             button(type="submit").btn Delete
     else 

@@ -15,6 +15,9 @@ router.get('/product-list', adminController.getProductList);
 // /admin/add-product => POST
 router.post('/add-product', adminController.postAddProductPage);
 
+router.get('/edit-product/:productId', adminController.getEditProductPage);
+router.post('/edit-product', adminController.postEditProductPage);
+
 // Everything commented out is the functional way of routing with no MVC
 // const products = [];
 
