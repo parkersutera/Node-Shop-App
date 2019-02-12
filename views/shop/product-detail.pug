@@ -13,5 +13,5 @@ block content
             h2 #{product.price}
             p #{product.description}
             form(action="/cart" method="post")
-                button(type="submit").btn.blk-btn Add to Cart
+                button(type="submit").btn.blk-btn.btn-no-radius Add to Cart
                 input(type="hidden" name="productId" value=`${product.id}`)
