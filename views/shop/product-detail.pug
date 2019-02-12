@@ -5,7 +5,8 @@ block styles
 
 block content
     .center
-        img(src=`${product.imageUrl}` alt=`${product.title}`)
+        .img-details
+            img(src=`${product.imageUrl}` alt=`${product.title}`)
         .details-div
             h1 #{product.title}
             hr

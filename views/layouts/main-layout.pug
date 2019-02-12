@@ -6,13 +6,14 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title #{pageTitle}
         <link rel="shortcut icon" type="image/png" href="/img/logo-dice-dark.png">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         block styles
     body
         .backdrop
         header.main-header
             .logo-img
                 img(src="/img/logo-dice-dark.png")
-            button#side-menu-toggle Menu
+            button#side-menu-toggle <i class="fas fa-bars fa-2x"></i>
             nav.main-header__nav
                 ul.main-header__item-list
                     li.main-header__item
