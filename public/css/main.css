@@ -143,6 +143,7 @@ margin: auto;
     width: 20rem;
     max-width: 95%;
     margin: 1rem 0;
+    border-radius: 3px;
 }
 
 .product__title {
@@ -194,8 +195,6 @@ button, .btn {
     border-top: 1px solid #dbdbdb;
     color: #000;
     background: #fff;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
     cursor: pointer;
     width: 100%;
     padding: 1rem;
@@ -211,7 +210,21 @@ button:active,
 .btn:active {
 background-color: #000;
 color: #f7f7f7;
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.edit {
+  border-bottom-left-radius: 3px;
+}
+
+.delete {
+  border-bottom-right-radius: 3px;
+}
+
+.edit:hover,
+.edit:active,
+.delete:hover,
+.delete:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
 .btn-add-product:hover,

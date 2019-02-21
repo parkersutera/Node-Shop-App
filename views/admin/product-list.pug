@@ -18,6 +18,7 @@ block content
                     .card__actions__admin
                         button(onclick=`window.location.href = '/admin/edit-product/${product.id}?edit=true';`).btn.edit Edit
                         form(action="/admin/delete-product" method="POST").full-width
-                            button(type="submit").btn Delete
+                            input(type="hidden", value=`${product.id}`,name="productId")
+                            button(type="submit").btn.delete Delete
     else 
         h1.center No Products
