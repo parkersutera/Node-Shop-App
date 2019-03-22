@@ -17,13 +17,6 @@ app.set('views', './shopApp/views');
 const adminRoutes = require('./routes/admin.js');
 const shopRoutes = require('./routes/shop.js');
 
-db.execute('SELECT * FROM products')
-.then(result => {
-    console.log(result[0], result[1]);
-})
-.catch(err => {
-    console.log(err);
-});
 
 app.use(bodyParser.urlencoded({extended: false})); //this will parse all body text automatically. from the package 'body-parser'
 app.use(express.static(path.join(__dirname, 'public')));
